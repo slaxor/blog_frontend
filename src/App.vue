@@ -1,26 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+		<UserLogin />
+    <PostList />
+		<PostCreate />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import UserLogin from './components/UserLogin.vue';
+import PostList from './components/PostList.vue';
+import PostCreate from './components/PostCreate.vue';
 
+// const routes = [
+  // { path: '/create', component: PostCreate },
+  // other routes here
+// ];
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+		UserLogin,
+    PostList,
+    PostCreate,
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

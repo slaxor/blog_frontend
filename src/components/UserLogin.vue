@@ -35,7 +35,7 @@ export default {
 					console.log(response.data);
           localStorage.setItem('jwtToken', response.data.data.token);
           // redirect to home page
-          // this.$router.push('/');
+          this.$router.push('/');
         })
         .catch((error) => {
           console.log(error);

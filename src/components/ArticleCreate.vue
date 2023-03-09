@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Create Post</h1>
+    <h1>Create Article</h1>
     <form>
       <label for="title">Title:</label>
       <input type="text" id="title" v-model="title">
@@ -8,7 +8,7 @@
       <label for="content">Content:</label>
       <textarea id="content" v-model="content"></textarea>
 
-      <button type="submit" @click.prevent="createPost">Create Post</button>
+      <button type="submit" @click.prevent="createArticle">Create Article</button>
     </form>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     };
   },
   methods: {
-    createPost() {
+    createArticle() {
       const jwtToken = localStorage.getItem('jwtToken');
       if (!jwtToken) {
         // redirect to login page
@@ -37,7 +37,7 @@ export default {
         content: this.content,
       };
 
-      axios.post('http://localhost:18000/api/posts', data, {
+      axios.article('http://localhost:18000/api/articles', data, {
         headers: {
           Authorization: `Bearer ${jwtToken}`,
         },
